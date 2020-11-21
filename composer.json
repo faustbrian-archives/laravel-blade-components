@@ -1,0 +1,52 @@
+{
+    "name": "konceiver/laravel-blade-components",
+    "description": ":package_description",
+    "keywords": [
+        "konceiver",
+        "laravel-blade-components"
+    ],
+    "homepage": "https://github.com/konceiver/laravel-blade-components",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "brian@konceiver.dev",
+            "homepage": "https://konceiver.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "illuminate/contracts": "^7.0|^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "konceiver/better-number-formatter": "^1.1"
+    },
+    "require-dev": {
+        "konceiver/laravel-stan": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Konceiver\\BladeComponents\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Konceiver\\BladeComponents\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest --min=100 --coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Konceiver\\BladeComponents\\Providers\\BladeComponentsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
