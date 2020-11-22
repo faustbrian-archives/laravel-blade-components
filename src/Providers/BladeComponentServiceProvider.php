@@ -19,6 +19,8 @@ use Konceiver\BladeComponents\View\Components\Currency;
 use Konceiver\BladeComponents\View\Components\Number;
 use Konceiver\BladeComponents\View\Components\Percentage;
 use Konceiver\BladeComponents\View\Components\ShortCurrency;
+use Konceiver\BladeComponents\View\Components\ShortPercentage;
+use Konceiver\BladeComponents\View\Components\TruncateMiddle;
 
 class BladeComponentServiceProvider extends ServiceProvider
 {

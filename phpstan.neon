@@ -7,4 +7,3 @@ parameters:
         - "src/Providers/BladeComponentServiceProvider.php"
     ignoreErrors:
         - "#is not allowed to extend#"
-        - "#with default value#"
