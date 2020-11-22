@@ -1,1 +1,1 @@
-<x-currency currency="USD" decimals="2">{{ $amount }}</x-currency>
+<x-currency currency="USD" decimals="2">{{ $slot }}</x-currency>

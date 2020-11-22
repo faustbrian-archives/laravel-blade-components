@@ -13,28 +13,22 @@ declare(strict_types=1);
 
 namespace Konceiver\BladeComponents\View\Components;
 
+use Illuminate\Support\Arr;
 use Illuminate\View\Component;
 
 final class TruncateMiddle extends Component
 {
-    private string $value;
-
-    private int $length;
-
-    public function __construct(string $value, int $length = 8)
+    public function render(): \Closure
     {
-        $this->value  = $value;
-        $this->length = $length;
-    }
+        return function (array $data): string {
+            $value     = trim((string) $data['slot']);
+            $maxLength = Arr::get($data, 'attributes.length', 8) + 3;
 
-    public function render(): string
-    {
-        $maxLength = $this->length + 3;
+            if (strlen($value) <= $maxLength) {
+                return $value;
+            }
 
-        if (strlen($this->value) <= $maxLength) {
-            return $this->value;
-        }
-
-        return substr_replace($this->value, '...', ceil($maxLength / 2), strlen($this->value) - $maxLength);
+            return substr_replace($value, '...', ceil($maxLength / 2), strlen($value) - $maxLength);
+        };
     }
 }

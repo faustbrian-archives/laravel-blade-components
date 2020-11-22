@@ -22,7 +22,7 @@ final class Percentage extends Component
     public function render(): Closure
     {
         return function (array $data): string {
-            return BetterNumberFormatter::new()->formatWithPercent((float) trim((string) $data['slot']));
+            return BetterNumberFormatter::new()->formatWithPercent((float) trim((string) $data['slot']), 2);
         };
     }
 }
