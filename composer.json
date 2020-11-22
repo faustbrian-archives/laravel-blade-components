@@ -44,7 +44,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Konceiver\\BladeComponents\\Providers\\BladeComponentsServiceProvider"
+                "Konceiver\\BladeComponents\\Providers\\BladeComponentServiceProvider"
             ]
         }
     },
