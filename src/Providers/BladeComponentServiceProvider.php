@@ -27,12 +27,12 @@ class BladeComponentServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
-            $blade->component(Currency::class, 'currency');
-            $blade->component(Number::class, 'number');
-            $blade->component(Percentage::class, 'percentage');
-            $blade->component(ShortCurrency::class, 'short-currency');
-            $blade->component(ShortPercentage::class, 'short-percentage');
-            $blade->component(TruncateMiddle::class, 'truncate-middle');
+            $blade->component('currency', Currency::class);
+            $blade->component('number', Number::class);
+            $blade->component('percentage', Percentage::class);
+            $blade->component('short-currency', ShortCurrency::class);
+            $blade->component('short-percentage', ShortPercentage::class);
+            $blade->component('truncate-middle', TruncateMiddle::class);
         });
     }
 }
