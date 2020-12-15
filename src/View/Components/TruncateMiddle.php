@@ -28,7 +28,7 @@ final class TruncateMiddle extends Component
                 return $value;
             }
 
-            return substr_replace($value, '...', ceil($maxLength / 2), strlen($value) - $maxLength);
+            return substr_replace($value, '...', (int) ceil($maxLength / 2), (int) (strlen($value) - $maxLength));
         };
     }
 }

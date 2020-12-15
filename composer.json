@@ -16,10 +16,10 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
-        "illuminate/contracts": "^7.0|^8.0",
-        "illuminate/support": "^7.0|^8.0",
-        "konceiver/better-number-formatter": "^1.1"
+        "php": "^8.0",
+        "illuminate/contracts": "^8.0",
+        "illuminate/support": "^8.0",
+        "konceiver/better-number-formatter": "^2.0"
     },
     "require-dev": {
         "konceiver/laravel-stan": "^1.1",
