@@ -29,7 +29,7 @@ final class ShortCurrency extends Component
     public function render(): Closure
     {
         return function (array $data): string {
-            return BetterNumberFormatter::new()->formatWithCurrencyShort(trim((string) $data['slot']), $this->currency);
+            return BetterNumberFormatter::new()->formatWithCurrencyShort((float) trim((string) $data['slot']), $this->currency);
         };
     }
 }
