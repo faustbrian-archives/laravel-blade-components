@@ -36,7 +36,7 @@ final class Currency extends Component
                 $decimals = (int) Arr::get($data, 'attributes.decimals');
             }
 
-            return BetterNumberFormatter::new()->formatWithCurrencyCustom((float) trim((string) $data['slot']), $this->currency, $decimals);
+            return BetterNumberFormatter::new()->formatWithCurrencyCustom(trim((string) $data['slot']), $this->currency, $decimals);
         };
     }
 }
