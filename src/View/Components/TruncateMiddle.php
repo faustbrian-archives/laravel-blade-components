@@ -22,7 +22,7 @@ final class TruncateMiddle extends Component
     {
         return function (array $data): string {
             $value     = trim((string) $data['slot']);
-            $maxLength = Arr::get($data, 'attributes.length', 8);
+            $maxLength = Arr::get($data, 'attributes.length', 10);
 
             if (strlen($value) <= $maxLength) {
                 return $value;
