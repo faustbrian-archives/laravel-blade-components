@@ -45,17 +45,17 @@ it('should render when included in a blade view', function (): void {
 
     $this->assertView('truncate-middle', ([
         'slot' => 'I am a very long string',
-    ]))->contains('I am a...tring');
+    ]))->contains('I am…ring');
 
     $this->assertView('truncate-middle-with-length', ([
         'slot'   => 'I am a very long string',
         'length' => 10,
-    ]))->contains('I am a ...string');
+    ]))->contains('I am …tring');
 
     $this->assertView('truncate-middle-with-length', ([
         'slot'   => 'I am a very long string',
-        'length' => 1,
-    ]))->contains('I ...ng');
+        'length' => 2,
+    ]))->contains('I…g');
 
     $this->assertView('truncate-middle', ([
         'slot' => 'short',
