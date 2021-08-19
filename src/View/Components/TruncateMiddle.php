@@ -22,13 +22,18 @@ final class TruncateMiddle extends Component
     {
         return function (array $data): string {
             $value     = trim((string) $data['slot']);
-            $maxLength = Arr::get($data, 'attributes.length', 8) + 3;
+            $maxLength = Arr::get($data, 'attributes.length', 10);
 
             if (strlen($value) <= $maxLength) {
                 return $value;
             }
 
-            return substr_replace($value, '...', (int) ceil($maxLength / 2), (int) (strlen($value) - $maxLength));
+            $partLength = (int) floor(($maxLength) / 2);
+
+            $parts[] = substr($value, 0, $partLength);
+            $parts[] = substr($value, -$partLength);
+
+            return implode('…', $parts);
         };
     }
 }

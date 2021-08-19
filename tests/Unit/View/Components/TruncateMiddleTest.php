@@ -13,7 +13,7 @@ it('should format the given value', function (): void {
 
     assertMatchesSnapshot((new TruncateMiddle())->render()([
         'slot'        => 'I am a very long string',
-        ['attributes' => ['length' => 10]],
+        ['attributes' => ['length' => 12]],
     ]));
 
     assertMatchesSnapshot((new TruncateMiddle())->render()([
@@ -27,7 +27,7 @@ it('should format the given value', function (): void {
 
     assertMatchesSnapshot((new TruncateMiddle())->render()([
         'slot'        => 'a',
-        ['attributes' => ['length' => 10]],
+        ['attributes' => ['length' => 12]],
     ]));
 
     assertMatchesSnapshot((new TruncateMiddle())->render()([
@@ -45,17 +45,17 @@ it('should render when included in a blade view', function (): void {
 
     $this->assertView('truncate-middle', ([
         'slot' => 'I am a very long string',
-    ]))->contains('I am a...tring');
+    ]))->contains('I am …tring');
 
     $this->assertView('truncate-middle-with-length', ([
         'slot'   => 'I am a very long string',
-        'length' => 10,
-    ]))->contains('I am a ...string');
+        'length' => 12,
+    ]))->contains('I am a…string');
 
     $this->assertView('truncate-middle-with-length', ([
         'slot'   => 'I am a very long string',
-        'length' => 1,
-    ]))->contains('I ...ng');
+        'length' => 2,
+    ]))->contains('I…g');
 
     $this->assertView('truncate-middle', ([
         'slot' => 'short',
@@ -63,7 +63,7 @@ it('should render when included in a blade view', function (): void {
 
     $this->assertView('truncate-middle-with-length', ([
         'slot'   => 'a',
-        'length' => 10,
+        'length' => 12,
     ]))->contains('a');
 
     $this->assertView('truncate-middle', ([
